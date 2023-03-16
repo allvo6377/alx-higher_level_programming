@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    new_matrix = matrix.copy()
+def uniq_add(my_list=[]):
+    uniq_list = set(my_list)
+    num = 0
 
-    for i in range(len(matrix)):
-        new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
+    for i in uniq_list:
+        num += i
 
-    return (new_matrix)
-
+    return (num)
