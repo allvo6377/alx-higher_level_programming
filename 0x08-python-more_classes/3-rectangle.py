@@ -66,4 +66,5 @@ class Rectangle:
                 rect_str += "#" * self.width
                 if i != self.height - 1:
                     rect_str += "\n"
-            return rect_str 
+            return rect_str
+
