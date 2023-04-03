@@ -1,4 +1,4 @@
-#!/bin/usr/python
+#!/bin/usr/python3
 """A module that defines a clss rectangle"""
 
 
