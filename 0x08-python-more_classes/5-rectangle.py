@@ -72,5 +72,5 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.__width, self.__height)
     
     def __del__(self):
-        """Returns a goodbye message after instance delete"""
+        """Returns a goodbye message after instance deletion"""
         print("Bye rectangle...")
