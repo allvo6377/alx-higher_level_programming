@@ -56,14 +56,13 @@ class Rectangle:
             return 2 * (self.__width + self.__height)
     
     def __str__(self):
-        """Returns a printable string representation of the # character"""
-        if self.__width == 0 or self.__height == 0:
+        """Returns a printable string representation
+        of a Rectangle  with the '#' character."""
+        if self.__height == 0 or self.__width == 0:
             return ""
-        else:
-            rect_str = ""
-            for i in range(self.__height):
-                rect_str += "#" * self.__width
-                if i != self.__height - 1:
-                    rect_str += "\n"
-            return rect_str
-
+        rec_str = ""
+        for i in range(self.__height):
+            for j in range(self.__width):
+                rec_str += "#"
+            rec_str += "\n"
+        return rec_str[:-1]
