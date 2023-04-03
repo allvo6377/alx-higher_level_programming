@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A module that defines a clss rectangle"""
+"""A module that defines a class rectangle"""
 
 
 class Rectangle:
@@ -65,3 +65,4 @@ class Rectangle:
                 if i != self.height - 1:
                     rect_str += "\n"
             return rect_str
+
