@@ -1,0 +1,57 @@
+=============================
+How to Use add_integer.py
+=============================
+
+This module defines an integer addition function ``add_integer(a, b=98)``.
+
+Usage
+=====
+
+The function takes in two parameters: ``a`` and ``b``. The ``b`` parameter is optional and defaults to 98. The function returns the sum of ``a`` and ``b`` as an integer.
+
+::
+
+    >>> add_integer = __import__('add_integer').add_integer
+    >>> a = 1
+    >>> b = 2
+    >>> add_integer(a, b)
+    3
+
+::
+
+    >>> a = 100.3
+    >>> b = -2
+    >>> add_integer(a, b)
+    98
+
+Invalid Input
+=============
+
+The parameters ``a`` and ``b`` must be integers or floats. Otherwise, a TypeError is raised.
+
+::
+
+    >>> a = "not a number"
+    >>> b = 2
+    >>> add_integer(a, b)
+     Traceback (most recent call last):
+         ...
+     TypeError: a must be an integer or b must be an integer
+
+::
+
+     >>> a = 1
+     >>> b = "not a number"
+     >>> add_integer(a, b)
+     Traceback (most recent call last):
+         ...
+     TypeError: a must be an integer or b must be an integer
+
+At least one argument must be provided.
+
+::
+
+     >>> add_integer()
+     Traceback (most recent call last):
+         ...
+     TypeError: add_integer() missing 1 required positional argument: 'a'
