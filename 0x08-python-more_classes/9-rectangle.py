@@ -83,13 +83,9 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-    def square(cls, size=0):
 
+    @classmethod
+    def square(cls, size=0):
         """Class method that returns a new square Rectangle instance"""
         return cls(size, size)
 
-    # Public class attribute
-    number_of_instance s = 0
-
-    # Public class attribute
-    print_symbol = "#"
