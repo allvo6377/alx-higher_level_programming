@@ -14,10 +14,13 @@ def matrix_mul(m_a, m_b):
         list: A new matrix that is the result of multiplying m_a and m_b.
 
     Raises:
-        TypeError: If m_a or m_b is not a list, if m_a or m_b is not a list of lists,
+        TypeError: If m_a or m_b is not a list, if m_a or m_b is not a,
+        list of lists,
         if one element of those lists of lists is not an integer or a float,
-        or if m_a or m_b is not a rectangle (all rows should be of the same size).
-        ValueError: If m_a or m_b is empty, or if m_a and m_b can't be multiplied.
+        or if m_a or m_b is not a rectangle,
+        (all rows should be of the same size).
+        ValueError: If m_a or m_b is empty,
+        or if m_a and m_b can't be multiplied.
     """
     # Check if m_a and m_b are lists
     if not isinstance(m_a, list):
@@ -33,7 +36,8 @@ def matrix_mul(m_a, m_b):
 
     # Check if m_a and m_b are not empty
     if not any(m_a) or not any(m_b):
-        raise ValueError("m_a can't be empty" if not any(m_a) else "m_b can't be empty")
+        raise ValueError("m_a can't be empty" if not any(m_a)
+                         else "m_b can't be empty")
 
     # Check if all elements of m_a and m_b are integers or floats
     if not all(isinstance(x, (int, float)) for row in m_a for x in row):
@@ -49,10 +53,14 @@ def matrix_mul(m_a, m_b):
     if not all(len(row) == row_length_m_b for row in m_b):
         raise TypeError("each row of m_b must be of the same size")
 
-    # Check if the number of columns in the first matrix is equal to the number of rows in the second matrix
+    """
+    Check if the number of columns in the first matrix is equal to the,
+    number of rows in the second matrix
+    """
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     # Multiply matrices
-    result = [[sum(a * b for a, b in zip(row_m_a, col_m_b)) for col_m_b in zip(*m_b)] for row_m_a in m_a]
+    result = [[sum(a * b for a, b in zip(row_m_a, col_m_b)) for col_m_b in
+              zip(*m_b)] for row_m_a in m_a]
     return result
