@@ -6,7 +6,6 @@ class Rectangle:
     """
     class that represents a rectangle.
     """
-
     number_of_instances = 0
     print_symbol = "#"
 
@@ -26,8 +25,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            return ((str(self.print_symbol) * self.width + "\n") *
-                    self.height)[:-1]
+            return ((str(self.print_symbol) * self.width + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """Returns a string representation of the rectangle"""
@@ -85,3 +83,9 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Class method that returns a new square Rectangle instance"""
+        return cls(size, size)
+
