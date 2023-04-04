@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""This module creates a class that defines a rectangle"""
-
-#!/usr/bin/python3
 """Defines a module that creates a class rectangle"""
 
 
