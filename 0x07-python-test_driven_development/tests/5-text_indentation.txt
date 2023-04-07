@@ -1,43 +1,32 @@
-================================
-How to Use text_indentation.py
-================================
+This is the ``5-text_indentation`` module
+=========================================
 
-This module defines a text-indentation function ``text_indentation(text)``.
-
-Usage
-=====
-
-The function takes in a string parameter ``text`` and prints the text with 2 new lines after each of these characters: ., ? and :.
-
-::
-
-    >>> text_indentation = __import__('text_indentation').text_indentation
-    >>> text = "Hello. How are you? I'm good."
-    >>> text_indentation(text)
-    Hello.
-
-    How are you?
-
-    I'm good.
-
-Invalid Input
-=============
-
-The parameter ``text`` must be a string. Otherwise, a TypeError is raised.
-
-::
-
-    >>> text = 123
-    >>> text_indentation(text)
-    Traceback (most recent call last):
-        ...
-    TypeError: text must be a string
-
-At least one argument must be provided.
-
-::
-
-    >>> text_indentation()
-    Traceback (most recent call last):
-        ...
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
+Using ``text_indentation`` function
+-----------------------------------
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("")
+>>> text_indentation("lorem.  ipsum  ")
+lorem.
+<BLANKLINE>
+ipsum
+>>> text_indentation(2)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+>>> text_indentation(" lorem")
+lorem
+>>> text_indentation("lorem ipsum. lorem.  ")
+lorem ipsum.
+<BLANKLINE>
+lorem.
+<BLANKLINE>
+>>> text_indentation(".")
+.
+<BLANKLINE>
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
