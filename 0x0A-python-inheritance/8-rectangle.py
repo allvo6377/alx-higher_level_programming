@@ -14,8 +14,8 @@ class Rectangle(BaseGeometry):
             height: An integer that represents the height of the rectangle.
 
         Attributes:
-            __width: A private attribute that stores the width of the rectangle.
-            __height: A private attribute that stores the height of the rectangle.
+            __width: A private attribute that stores the width of  rectangle.
+            __height: A private attribute that stores the height of rectangle.
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
