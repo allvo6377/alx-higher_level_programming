@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Defines a module that adds a new attribute to an object"""
+
+
 def add_attribute(obj, name, value):
     """A function that adds a new attribute to an object if it’s possible.
 
