@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module that returns string representation of rectangle"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -13,8 +14,8 @@ class Rectangle(BaseGeometry):
             height: An integer that represents the height of the rectangle.
 
         Attributes:
-            __width: A private attribute that stores the width of the rectangle.
-            __height: A private attribute that stores the height of the rectangle.
+            __width: A private attribute that stores the width of  rectangle.
+            __height: A private attribute that stores the height of  rectangle.
         """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
@@ -28,4 +29,3 @@ class Rectangle(BaseGeometry):
     def __str__(self):
         """A method that returns a string representation of the rectangle."""
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
