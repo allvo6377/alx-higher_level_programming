@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """Returns dictionary descrition of data structure"""
 
 
