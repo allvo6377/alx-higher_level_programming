@@ -70,3 +70,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         """The setter for the y attribute"""
         self.__y = value
+
+    def area(self):
+        """Return the area value of the rectangle"""
+        return self.width * self.height
