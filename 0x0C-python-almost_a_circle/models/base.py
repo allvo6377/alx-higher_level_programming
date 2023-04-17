@@ -53,11 +53,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return an instance with all attributes already set
-        Create a dummy instance with default values for mandatory attributes
-        Use the update method to apply the real values from the dictionary
-        Return an updated instance
-        """
+        """Return an instance with all attributes already set"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
