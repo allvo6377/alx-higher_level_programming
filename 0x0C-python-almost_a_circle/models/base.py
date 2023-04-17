@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """A base class for all other classes in this project."""
 
