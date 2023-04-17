@@ -77,3 +77,41 @@ class Base:
             instance = cls.create(**dictionary)
             list_instances.append(instance)
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of objects to CSV format"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a list of objects from CSV format"""
+        filename = cls.__name__ + ".csv"
+        list_objs = []
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    dict_obj = {}
+                    if cls.__name__ == "Rectangle":
+                        keys = ["id", "width", "height", "x", "y"]
+                    elif cls.__name__ == "Square":
+                        keys = ["id", "size", "x", "y"]
+                    for i, key in enumerate(keys):
+                        dict_obj[key] = int(row[i])
+                    obj = cls.create(**dict_obj)
+                    list_objs.append(obj)
+            return list_objs
+        except FileNotFoundError:
+            return []
