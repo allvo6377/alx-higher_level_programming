@@ -58,12 +58,15 @@ class Base:
         Use the update method to apply the real values from the dictionary
         Return an updated instance
         """
+    def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy = cls(1)
-            dummy.update(**dictionary)
-            return dummy
+        else:
+            dummy = cls()
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
