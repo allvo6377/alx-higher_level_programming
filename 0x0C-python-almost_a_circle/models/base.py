@@ -4,7 +4,6 @@ import json
 import csv
 import turtle
 
-
 class Base:
     """A base class for all other classes in this project."""
 
@@ -62,8 +61,8 @@ class Base:
             dummy = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy = cls(1)
-    dummy.update(**dictionary)
-    return dummy
+            dummy.update(**dictionary)
+            return dummy
 
     @classmethod
     def load_from_file(cls):

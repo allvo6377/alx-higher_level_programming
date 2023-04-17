@@ -1,7 +1,6 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """Defines a module that creates a class square"""
 
-from models.base import Base
 from models.rectangle import Rectangle
 
 
