@@ -110,3 +110,34 @@ class Base:
             return list_objs
         except FileNotFoundError:
             return []
+
+
+@staticmethod
+def draw(list_rectangles, list_squares):
+    """Draws all rectangles and squares"""
+    t = turtle.Turtle()
+    t.speed(0)
+    for r in list_rectangles:
+        t.fillcolor("red")
+        t.penup()
+        t.goto(r.x, r.y)
+        t.pendown()
+        t.begin_fill()
+        for i in range(2):
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+        t.end_fill()
+    for s in list_squares:
+        t.fillcolor("blue")
+        t.penup()
+        t.goto(s.x, s.y)
+        t.pendown()
+        t.begin_fill()
+        for i in range(4):
+            t.forward(s.size)
+            t.left(90)
+        t.end_fill()
+    t.hideturtle()
+    turtle.done()
