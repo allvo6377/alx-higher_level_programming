@@ -1,25 +1,22 @@
 #!/usr/bin/node
-const request = require('request')
+const request = require('request');
+const api_url = 'https://jsonplaceholder.typicode.com/todos';
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos'
-
-request(apiUrl, (error, response, body) => {
-  const todos = JSON.parse(body)
-
-  const completedByUser = {}
-
-  todos.forEach(todo => {
-    if (todo.completed) {
-      const userId = todo.userId
-      if (completedByUser[userId]) {
-        completedByUser[userId]++
-      } else {
-        completedByUser[userId] = 1
-      } 
+request(api_url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        const data = JSON.parse(body);
+        let completedTasks = {};
+        data.forEach(task => {
+            if (task.completed) {
+                if (completedTasks[task.userId]) {
+                    completedTasks[task.userId] += 1;
+                } else {
+                    completedTasks[task.userId] = 1;
+                }
+            }
+        });
+        for (let userId in completedTasks) {
+            console.log(`User ${userId} completed ${completedTasks[userId]} tasks`);
+        }
     }
-  })
-
-  Object.keys(completedByUser).forEach(userId => {
-    console.log(`User ${userId} completed ${completedByUser[userId]} tasks`)
-  })
-})
+});
