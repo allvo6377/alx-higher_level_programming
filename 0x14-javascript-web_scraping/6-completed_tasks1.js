@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const requests = require("requests");
+const requests = require('requests');
 
-function getCompletedTasks(apiUrl) {
+function getCompletedTasks (apiUrl) {
   const response = requests.get(apiUrl);
   if (response.statusCode === 200) {
     const data = response.json();
@@ -18,7 +18,7 @@ function getCompletedTasks(apiUrl) {
   }
 }
 
-function getNumberOfCompletedTasksByUserId(completedTasks, userId) {
+function getNumberOfCompletedTasksByUserId (completedTasks, userId) {
   let count = 0;
   for (const task of completedTasks) {
     if (task.userId === userId) {
@@ -29,10 +29,9 @@ function getNumberOfCompletedTasksByUserId(completedTasks, userId) {
 }
 
 if (require.main === module) {
-  const apiUrl = "https://jsonplaceholder.typicode.com/todos";
+  const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
   const completedTasks = getCompletedTasks(apiUrl);
   const userId = 1;
   const count = getNumberOfCompletedTasksByUserId(completedTasks, userId);
   console.log(`User ${userId} has ${count} completed tasks`);
 }
-
